@@ -1,0 +1,94 @@
+---
+import ThemeToggle from "@/components/toggle-theme.astro";
+import LanguageSelector from "@/components/language-selector.astro";
+
+import {
+	getLangFromUrl,
+	useTranslations,
+	useTranslatedPath,
+} from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const translatePath = useTranslatedPath(lang);
+
+const navItems = Object.entries(t("nav")).map(([key, value]) => {
+	const url = translatePath(key);
+	const label = url.substring(2);
+	return {
+		title: value,
+		label,
+		url,
+	};
+});
+---
+
+<header
+  class="sticky top-0 z-50 w-full border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60"
+>
+<div class="container flex h-14 max-w-screen-2xl items-center justify-between m-auto px-4">
+	<a href={translatePath('/')} class="mr-4 flex items-center space-x-2 lg:mr-6">
+		<img src="/light-logo.png" alt="NGold logo" width={100} height={29} />
+		<span class="sr-only">NGold Dex</span>
+	</a>
+  <nav
+    class="flex items-center gap-4 text-sm lg:gap-6 mx-2 transition-opacity"
+  >
+  <LanguageSelector />
+    {
+      navItems.map((link) => (
+        <a
+          class="relative block px-2 py-2 transition hover:text-primary/90 hover:scale-105 duration-300 ease-in-out"
+          aria-label={link.label}
+          href={link.url}
+        >
+          {link.title}
+        </a>
+      ))
+    }
+    <ThemeToggle />
+  </nav>
+</div>
+</header>
+
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const sections = document.querySelectorAll("section")
+    const navItems = document.querySelectorAll("header nav a")
+
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute("aria-label") == entry.target.id) {
+              item.classList.add("text-blue-500")
+            } else {
+              item.classList.remove("text-blue-500")
+            }
+          })
+        }
+      })
+    }
+
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.3,
+    })
+
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
+
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === "hidden") {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
+</script>

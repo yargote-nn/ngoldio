@@ -7,6 +7,7 @@ import {
 	useTranslations,
 	useTranslatedPath,
 } from "@/i18n/utils";
+import Hero from "@/components/hero.astro";
 
 const { currentLocale } = Astro;
 const i18n = getI18N({ currentLocale });
@@ -30,8 +31,8 @@ const navItems = Object.entries(t("nav")).map(([key, value]) => {
 ---
 
 <Layout title={title} description={description}>
-	<main class="min-h-screen flex flex-col items-center justify-center px-6 py-12 text-center">
-		<h1>{i18n.TITLE}</h1>
+	<main class="min-h-screen flex flex-col items-center justify-center">
+		<Hero i18n={i18n.HERO} />
 	</main>
 	<footer class="absolute bottom-0 left-0 right-0 flex flex-col items-center justify-center gap-4 p-6 text-center">
 		<p id={navItems[1].label}>Copyright © 2023 NGold</p>

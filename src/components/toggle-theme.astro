@@ -1,7 +1,7 @@
 ---
 import SunIcon from "@/components/icons/sun.astro";
 import MoonIcon from "@/components/icons/moon.astro";
-import SunMoonIcon from "@/components/icons/sun-moon.astro";
+import ComputerIcon from "@/components/icons/computer-icons.astro";
 
 const THEMES = ["Light", "Dark", "System"];
 ---
@@ -18,9 +18,9 @@ const THEMES = ["Light", "Dark", "System"];
       id="dark"
       className="theme-toggle-icon absolute size-5 transition-all"
     />
-    <SunMoonIcon
+    <ComputerIcon
       id="system"
-      className="theme-toggle-icon absolute size-5 transition-all"
+      class="theme-toggle-icon absolute size-5 transition-all"
     />
   </button>
   <div
@@ -31,7 +31,10 @@ const THEMES = ["Light", "Dark", "System"];
     <ul>
       {
         THEMES.map((theme) => (
-          <li class="themes-menu-option px-2 py-1.5 cursor-default hover:bg-foreground/20 rounded-sm hover:scale-105 duration-300 ease-in-out">
+          <li class="themes-menu-option flex px-2 py-1.5 cursor-default hover:bg-foreground/20 rounded-sm hover:scale-105 duration-300 ease-in-out">
+            {theme === "System" && <ComputerIcon class="mr-2 h-4 w-4" />}
+            {theme === "Dark" && <MoonIcon class="mr-2 h-4 w-4" />}
+            {theme === "Light" && <SunIcon class="mr-2 h-4 w-4" />}
             {theme}
           </li>
         ))

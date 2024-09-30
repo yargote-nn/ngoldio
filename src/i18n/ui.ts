@@ -37,6 +37,9 @@ export const ui = {
 			faq: "Preguntas frecuentes",
 			contact: "Contacto",
 		},
+		hero: {
+			button: "Comprar",
+		},
 	},
 	en: {
 		nav: {
@@ -47,6 +50,9 @@ export const ui = {
 			faq: "FAQ",
 			contact: "Contact",
 		},
+		hero: {
+			button: "Buy",
+		},
 	},
 	fr: {
 		nav: {
@@ -56,6 +62,9 @@ export const ui = {
 			reserves: "Réserves",
 			faq: "FAQ",
 			contact: "Contact",
+		},
+		hero: {
+			button: "Acheter",
 		},
 	},
 } as const;

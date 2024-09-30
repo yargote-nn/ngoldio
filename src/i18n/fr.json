@@ -1,28 +1,15 @@
 {
 	"SEO_TITLE_1": "Ngold",
-	"SEO_TITLE_2": "- Célébrant le meilleur du streaming et des créateurs de contenu",
-	"SEO_DESCRIPTION": "Découvrez les meilleurs créateurs de contenu d'Espagne, d'Amérique latine et d'Andorre. Votez pour vos favoris ! Célébrez l'innovation et le talent sur Twitch, YouTube et plus",
-	"SEO": {
-		"ARCHIVO_TITLE": "Archives des éditions précédentes - Prix ESLAND",
-		"ARCHIVO_DESCRIPTION": "Revivez les meilleurs moments des éditions précédentes",
-		"INFO_TITLE": "Informations - Prix ESLAND",
-		"INFO_DESCRIPTION_1": "Découvrez tout ce que vous devez savoir sur les Prix ESLAND",
-		"INFO_DESCRIPTION_2": "et téléchargez le Kit Presse",
-		"VOTE_TITLE": "Votez pour vos créateurs de contenu favoris - Prix ESLAND",
-		"VOTE_DESCRIPTION": "Votez pour vos créateurs de contenu favoris d'Espagne, d'Amérique latine et d'Andorre",
-		"LEGAL_NOTICE_TITLE": "Mentions légales - Prix ESLAND",
-		"LEGAL_NOTICE_DESCRIPTION": "Les mentions légales définissent les dispositions légales et les responsabilités liées aux Prix ESLAND, abordant des aspects tels que les conditions d'utilisation, les responsabilités légales et les accords entre l'utilisateur et l'entité responsable.",
-		"PRIVACY_POLICY_TITLE": "Politique de confidentialité - Prix ESLAND",
-		"PRIVACY_POLICY_DESCRIPTION": "La politique de confidentialité des Prix ESLAND décrit comment les données personnelles des utilisateurs sont collectées, utilisées, protégées et partagées.",
-		"COOKIES_TITLE": "Politique de cookies - Prix ESLAND",
-		"COOKIES_DESCRIPTION": "La politique de cookies des Prix ESLAND informe sur l'utilisation des cookies et des technologies similaires sur le site web.",
-		"ERROR_404_TITLE": "404 Page non trouvée - Prix ESLAND",
-		"ERROR_404_DESCRIPTION": "Page non trouvée (Erreur 404). Vérifiez l'URL ou explorez nos sections. Besoin d'aide ? Contactez-nous."
-	},
+	"SEO_TITLE_2": "- Jeton Or de Gold Décentralisé",
+	"SEO_DESCRIPTION": "NGOLD émerge en tant que solution, combinée de la meilleure de l'économie de cryptomonnaies et de la meilleure de la stabilité du or.",
+	"SEO": {},
 	"HEADER": {
 		"LOGO": "Retour à la page d'accueil des Ngold"
 	},
-	"TITLE": "NGold",
+	"HERO": {
+		"TITLE": "NGOLD",
+		"DESCRIPTION": "Jeton Or de Gold Décentralisé"
+	},
 	"ERROR_404": {
 		"TITLE": "Page non trouvée",
 		"BACK_HOMEPAGE_BTN": "Retour à la page d'accueil"

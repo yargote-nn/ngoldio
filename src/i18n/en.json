@@ -6,7 +6,10 @@
 	"HEADER": {
 		"LOGO": "Return to the NGold Homepage"
 	},
-	"TITLE": "NGold",
+	"HERO": {
+		"TITLE": "NGOLD",
+		"DESCRIPTION": "Decentralized Digital Gold Token"
+	},
 	"ERROR_404": {
 		"TITLE": "Page not found",
 		"BACK_HOMEPAGE_BTN": "Back to homepage"

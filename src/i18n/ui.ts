@@ -38,7 +38,9 @@ export const ui = {
 			contact: "Contacto",
 		},
 		hero: {
-			button: "Comprar",
+			title: "Comprar",
+			description:
+				"Al comprar NGOLD aceptas los términos y condiciones de NGOLD.",
 		},
 	},
 	en: {
@@ -51,7 +53,9 @@ export const ui = {
 			contact: "Contact",
 		},
 		hero: {
-			button: "Buy",
+			title: "Buy",
+			description:
+				"By purchasing NGOLD you accept the terms and conditions of NGOLD.",
 		},
 	},
 	fr: {
@@ -64,7 +68,9 @@ export const ui = {
 			contact: "Contact",
 		},
 		hero: {
-			button: "Acheter",
+			title: "Acheter",
+			description:
+				"En achetant NGOLD, vous acceptez les conditions d'utilisation de NGOLD.",
 		},
 	},
 } as const;

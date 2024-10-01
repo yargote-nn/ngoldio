@@ -1,0 +1,24 @@
+---
+import { Image } from "astro:assets";
+import { motion } from "framer-motion";
+---
+
+<div class="flex items-center justify-center h-screen bg-transparent">
+	<motion.div
+		animate={{ rotateY: 360 }}
+		transition={{
+			duration: 10,
+			repeat: Number.POSITIVE_INFINITY,
+			ease: "linear",
+		}}
+		className="w-64 h-64"
+	>
+        <Image
+            src="/assets/images/ngoldio-coin.png"
+            alt="NGOLD Cryptocurrency Coin"
+            width={256}
+            height={256}
+            class="w-full h-full object-contain"
+        />
+	</motion.div>
+</div>

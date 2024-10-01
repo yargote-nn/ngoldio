@@ -1,39 +1,45 @@
 ---
 import { Button } from "./ui/button";
-import ButtonWithDialog from "./react/button-with-dialog";
+import BuyButtons from "./react/buy-buttons";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
-import { Image } from "astro:assets";
+import RotatingCoin from "./react/rotating-coin";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const { button } = t("hero") as Record<string, string>;
+const { title, description } = t("hero") as Record<string, string>;
 
 const { i18n } = Astro.props;
 const { TITLE, DESCRIPTION } = i18n;
 ---
-<section class="size-full flex justify-center items-center gap-4 bg-background/95 backdrop-blur-md">
-		<div class="flex flex-col items-center justify-center gap-4 mt-8">
-			<h1 class="text-4xl font-bold font-mono">{TITLE}</h1>
-			<p class="text-xl font-bold font-mono">{DESCRIPTION}</p>
-			<ButtonWithDialog title={button} client:load>
-				<>
-					<Button asChild>
-						<a href="/page1">DEX</a>
-					</Button>
-					<Button asChild>
-						<a href="/page2">DEX-P2P</a>
-					</Button>
-				</>
-			</ButtonWithDialog>
-		</div>
-		<div class="flex">
-			<Image src="/assets/images/ngoldio-coin.png" alt="NGOLD logo" width={300} height={300} />
-		</div>
-</section>
+
+<article
+  class="size-full flex justify-center items-center gap-4 bg-background/95 backdrop-blur-md"
+>
+  <section class="flex flex-col items-center justify-center gap-4 mt-8">
+    <h1 class="text-9xl font-bold font-mono">{TITLE}</h1>
+    <p class="text-2xl font-bold font-mono">{DESCRIPTION}</p>
+    <div>
+      <BuyButtons title={title} description={description} client:load />
+      <Button
+        variant="link"
+        className="ml-4 bg-primary text-foreground dark:text-background"
+      >
+        <a
+          href="https://www.ngold.io/assets/files/ngold-whitepaper-en.pdf"
+          target="_blank"
+          rel="noopener noreferrer">Whitepaper</a
+        >
+      </Button>
+    </div>
+  </section>
+  <section class="flex">
+    <RotatingCoin client:load />
+  </section>
+</article>
 
 <style>
-	section {
-		min-height: 100vh;
-	}
+  section {
+    min-height: 100vh;
+  }
 </style>
